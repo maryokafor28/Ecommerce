@@ -1,0 +1,59 @@
+.problem-section {
+  margin-top: 4rem;
+  background-image: url("../../assets/images/problems.svg"); /* adjust path as needed */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 6rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.overlay-content {
+  max-width: 600px;
+}
+
+.highlight {
+  color: #2196f3;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.heading {
+  font-size: 2rem;
+  letter-spacing: 0.5px;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.description {
+  text-align: center;
+  color: #737373;
+  width: 400px;
+  font-size: 14px;
+  margin-bottom: 1rem;
+}
+
+.price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #23856d;
+  margin-bottom: 1.5rem;
+}
+
+.cta-button {
+  background-color: #2196f3;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.8rem;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #1976d2;
+}

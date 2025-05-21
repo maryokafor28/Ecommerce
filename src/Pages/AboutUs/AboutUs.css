@@ -1,0 +1,60 @@
+.aboutus-container {
+  display: flex;
+  padding: 40px;
+  align-items: center;
+  max-width: 900px;
+  gap: 10rem;
+  margin: 0 auto;
+}
+
+.testimonial {
+  max-width: 350px;
+  text-align: center;
+}
+
+.profile-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 1rem 0;
+}
+
+.stars {
+  display: flex;
+  justify-content: center;
+  margin: 0.5rem 0;
+}
+
+.testimonial-text {
+  width: 450px;
+  color: #737373;
+  line-height: 1.5;
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin: 1rem 0;
+}
+
+.name {
+  color: #23a6f0;
+  font-weight: bold;
+}
+
+.title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #252b42;
+}
+
+.gallerys {
+  max-width: 350px;
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  justify-content: center;
+}
+
+.gallerys-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
