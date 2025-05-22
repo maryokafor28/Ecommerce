@@ -58,12 +58,6 @@ function ProductGallery() {
         <h2>BESTSELLER PRODUCTS</h2>
         <p>Problems trying to resolve the conflict between</p>
       </div>
-      {isLoading && <p style={{ textAlign: "center" }}>Loading...</p>}
-      {isError && (
-        <p style={{ textAlign: "center", color: "red" }}>
-          Something went wrong.
-        </p>
-      )}
 
       <div className="product-grid">
         {data.products.map((product: Product) => {

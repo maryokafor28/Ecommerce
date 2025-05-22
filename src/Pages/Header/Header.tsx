@@ -1,4 +1,3 @@
-import React from "react";
 import "./Header.css";
 import { FiPhone, FiChevronDown } from "react-icons/fi";
 import { Envelope, UserIcon } from "../../icons/icons";

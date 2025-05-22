@@ -1,4 +1,4 @@
-import React from "react";
+
 import Header from "./Pages/Header/Header";
 import FurnitureGallery from "./Pages/HeroSection/Furniture";
 import ProductGallery from "./Pages/BestSeller/ProductGallery";
