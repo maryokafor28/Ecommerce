@@ -1,5 +1,5 @@
 import furniture1 from "../assets/images/Items-furniture1.svg";
-import furniture2 from "../assets/images/Items-furniture2.svg";
+import furniture2 from "../assets/images/items-furniture2.svg";
 import furniture3 from "../assets/images/Items-furniture3.svg";
 import furniture4 from "../assets/images/Items-furniture4.svg";
 import heart from "../assets/images/heart.svg";
