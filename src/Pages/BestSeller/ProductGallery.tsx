@@ -1,119 +1,34 @@
-import React from "react";
+import { useState } from "react";
+import { useGetProductsQuery } from "../../Services/ProductApi";
 import "./ProductGallery.css";
-import {
-  Product1,
-  Product2,
-  Product3,
-  Product4,
-  Product5,
-  Product6,
-  Product7,
-  Product8,
-  Product9,
-  Product10,
-} from "../../icons/icons";
 
-interface Product {
+// Define the Product type based on expected product properties
+type Product = {
   id: number;
-  image: React.FC<React.SVGProps<SVGSVGElement>>;
+  title: string;
+  category: string;
+  price: number;
+  discountPercentage: number;
+  thumbnail: string;
+};
+
+type ProductCardProps = {
+  image: string;
   title: string;
   category: string;
   oldPrice: string;
   newPrice: string;
-}
+};
 
-const products: Product[] = [
-  {
-    id: 1,
-    image: Product1,
-    title: "Graphic Design",
-    category: "English Department",
-    oldPrice: "$16.48",
-    newPrice: "$6.48",
-  },
-  {
-    id: 2,
-    image: Product2,
-    title: "Graphic Design",
-    category: "English Department",
-    oldPrice: "$16.48",
-    newPrice: "$6.48",
-  },
-  {
-    id: 3,
-    image: Product3,
-    title: "Graphic Design",
-    category: "English Department",
-    oldPrice: "$16.48",
-    newPrice: "$6.48",
-  },
-  {
-    id: 4,
-    image: Product4,
-    title: "Graphic Design",
-    category: "English Department",
-    oldPrice: "$16.48",
-    newPrice: "$6.48",
-  },
-  {
-    id: 5,
-    image: Product5,
-    title: "Graphic Design",
-    category: "English Department",
-    oldPrice: "$16.48",
-    newPrice: "$6.48",
-  },
-  {
-    id: 6,
-    image: Product6,
-    title: "Graphic Design",
-    category: "English Department",
-    oldPrice: "$16.48",
-    newPrice: "$6.48",
-  },
-  {
-    id: 7,
-    image: Product7,
-    title: "Graphic Design",
-    category: "English Department",
-    oldPrice: "$16.48",
-    newPrice: "$6.48",
-  },
-  {
-    id: 8,
-    image: Product8,
-    title: "Graphic Design",
-    category: "English Department",
-    oldPrice: "$16.48",
-    newPrice: "$6.48",
-  },
-  {
-    id: 9,
-    image: Product9,
-    title: "Graphic Design",
-    category: "English Department",
-    oldPrice: "$16.48",
-    newPrice: "$6.48",
-  },
-  {
-    id: 10,
-    image: Product10,
-    title: "Graphic Design",
-    category: "English Department",
-    oldPrice: "$16.48",
-    newPrice: "$6.48",
-  },
-];
-
-const ProductCard: React.FC<Product> = ({
-  image: Image,
+const ProductCard: React.FC<ProductCardProps> = ({
+  image,
   title,
   category,
   oldPrice,
   newPrice,
 }) => (
   <div className="product-card">
-    <Image className="product-image" />
+    <img src={image} alt={title} className="product-image" />
     <h3 className="product-title">{title}</h3>
     <p className="product-category">{category}</p>
     <div className="product-price">
@@ -124,6 +39,18 @@ const ProductCard: React.FC<Product> = ({
 );
 
 function ProductGallery() {
+  const [skip, setSkip] = useState(0);
+  const limit = 10;
+
+  const { data, isLoading, isError } = useGetProductsQuery({ limit, skip });
+
+  const handleLoadMore = () => {
+    setSkip((prev) => prev + limit);
+  };
+
+  if (isLoading) return <p>Loading...</p>;
+  if (isError) return <p>Something went wrong.</p>;
+
   return (
     <section className="product-section">
       <div className="product-header">
@@ -131,13 +58,35 @@ function ProductGallery() {
         <h2>BESTSELLER PRODUCTS</h2>
         <p>Problems trying to resolve the conflict between</p>
       </div>
+      {isLoading && <p style={{ textAlign: "center" }}>Loading...</p>}
+      {isError && (
+        <p style={{ textAlign: "center", color: "red" }}>
+          Something went wrong.
+        </p>
+      )}
+
       <div className="product-grid">
-        {products.map((product) => (
-          <ProductCard key={product.id} {...product} />
-        ))}
+        {data.products.map((product: Product) => {
+          const oldPrice: number =
+            product.price + (product.price * product.discountPercentage) / 100;
+
+          return (
+            <ProductCard
+              key={product.id}
+              image={product.thumbnail}
+              title={product.title}
+              category={product.category}
+              oldPrice={`$${oldPrice.toFixed(2)}`}
+              newPrice={`$${product.price.toFixed(2)}`}
+            />
+          );
+        })}
       </div>
+
       <div className="load-more-wrapper">
-        <button className="load-more">LOAD MORE PRODUCTS</button>
+        <button className="load-more" onClick={handleLoadMore}>
+          LOAD MORE PRODUCTS
+        </button>
       </div>
     </section>
   );

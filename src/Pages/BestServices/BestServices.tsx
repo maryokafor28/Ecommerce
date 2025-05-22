@@ -1,4 +1,3 @@
-import React from "react";
 import "./BestServices.css";
 import { Service1, Service2, Service3 } from "../../icons/icons";
 
