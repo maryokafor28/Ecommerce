@@ -10,8 +10,10 @@ function Header() {
       {/* Top Green Banner */}
       <div className="top-banner">
         <div className="banner-left">
-          <FiPhone className="icon" />
-          <p>(225)555-0118</p>
+          <span>
+            <FiPhone className="icon" />
+            (225)555-0118
+          </span>
           <span>
             <Envelope className="mail-icon" />
             michelle.rivera@example.com
@@ -31,17 +33,19 @@ function Header() {
 
       {/* Navigation Bar */}
       <nav className="nav-bar">
-        <div className="logo">Bandage</div>
-        <ul className="nav-links">
-          <li>Home</li>
-          <li style={{ display: "flex", alignItems: "center", gap: "4px" }}>
-            Shop <FiChevronDown />
-          </li>
-          <li>About</li>
-          <li>Blog</li>
-          <li>Contact</li>
-          <li>Pages</li>
-        </ul>
+        <div className="nav-left">
+          <div className="logo">Bandage</div>
+          <ul className="nav-links">
+            <li>Home</li>
+            <li style={{ display: "flex", alignItems: "center", gap: "4px" }}>
+              Shop <FiChevronDown />
+            </li>
+            <li>About</li>
+            <li>Blog</li>
+            <li>Contact</li>
+            <li>Pages</li>
+          </ul>
+        </div>
         <div className="nav-actions">
           <a href="#">
             <UserIcon className="user-icon" />

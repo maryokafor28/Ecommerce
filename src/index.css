@@ -1,24 +1,35 @@
+@font-face {
+  font-family: "Montserrat";
+  src: url("./assets/fonts/Montserrat-Regular.woff2") format("woff2");
+  font-style: normal;
+}
+
 :root {
-  --font-family-sans-serif: monteserat, sans-serif;
-  --font-family-serif: monteserat, serif;
+  --font-family-sans-serif: Montserrat, sans-serif;
+  --font-family-serif: Montserrat, serif;
+  --body-font: Montserrat, sans-serif;
 
   --background-color: #ffffff;
+  --body-text: #737373;
+}
 
-  --body-text: #737373 h1, h2, h3, h4, h5, h6 {
-    color: #000;
-  }
-  p {
-    color: var(--body-text);
-  }
-  --body-font: montserrat, sans-serif;
+body {
+  font-family: var(--body-font);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent page-wide overflow */
+  box-sizing: border-box;
+}
 
-  @font-face {
-    font-family: "Montserrat";
-    src: url("./assets/fonts/Montserrat-Regular.woff2") format("woff2");
-    font-style: normal;
-  }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #000;
+}
 
-  body {
-    font-family: "Montserrat", sans-serif;
-  }
+p {
+  color: var(--body-text);
 }

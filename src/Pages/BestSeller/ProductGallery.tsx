@@ -48,8 +48,21 @@ function ProductGallery() {
     setSkip((prev) => prev + limit);
   };
 
-  if (isLoading) return <p>Loading...</p>;
-  if (isError) return <p>Something went wrong.</p>;
+  if (isLoading) {
+    return (
+      <div className="loading-spinner">
+        <p>Loading...</p>
+      </div>
+    );
+  }
+
+  if (isError) {
+    return (
+      <div className="error-message">
+        <p>Something went wrong.</p>
+      </div>
+    );
+  }
 
   return (
     <section className="product-section">
