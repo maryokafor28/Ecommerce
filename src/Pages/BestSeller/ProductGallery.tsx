@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useGetProductsQuery } from "../../Services/ProductApi";
 import "./ProductGallery.css";
 
@@ -39,16 +39,26 @@ const ProductCard: React.FC<ProductCardProps> = ({
 );
 
 function ProductGallery() {
+  const isMobile = window.innerWidth <= 600;
+  const limit = isMobile ? 5 : 10;
+
   const [skip, setSkip] = useState(0);
-  const limit = 10;
+  const [allProducts, setAllProducts] = useState<Product[]>([]);
 
   const { data, isLoading, isError } = useGetProductsQuery({ limit, skip });
+
+  useEffect(() => {
+    if (data?.products) {
+      // Append new products to the existing list
+      setAllProducts((prev) => [...prev, ...data.products]);
+    }
+  }, [data]);
 
   const handleLoadMore = () => {
     setSkip((prev) => prev + limit);
   };
 
-  if (isLoading) {
+  if (isLoading && allProducts.length === 0) {
     return (
       <div className="loading-spinner">
         <p>Loading...</p>
@@ -73,8 +83,8 @@ function ProductGallery() {
       </div>
 
       <div className="product-grid">
-        {data.products.map((product: Product) => {
-          const oldPrice: number =
+        {allProducts.map((product: Product) => {
+          const oldPrice =
             product.price + (product.price * product.discountPercentage) / 100;
 
           return (

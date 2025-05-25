@@ -47,6 +47,7 @@ function FeaturedPosts() {
     <div className="featured-container">
       <p className="subheading">Practice Advice</p>
       <h2 className="main-heading">Featured Posts</h2>
+      <h2 className="mobile-heading"> Featured Products</h2>
       <div className="cards">
         {posts.map((post) => (
           <div className="card" key={post.id}>

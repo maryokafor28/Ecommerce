@@ -1,6 +1,9 @@
 .featured-container {
   padding: 40px;
   text-align: center;
+  /* width: 100%; */
+  /* max-width: 1000px; */
+  margin: 0 auto;
 }
 
 .subheading {
@@ -13,6 +16,9 @@
   font-size: 32px;
   margin-bottom: 32px;
 }
+.mobile-heading {
+  display: none;
+}
 
 .cards {
   display: flex;
@@ -22,8 +28,9 @@
 }
 
 .card {
-  width: 300px;
-  overflow: hidden;
+  width: 100%;
+  max-width: 350px;
+  /* overflow: hidden; */
   text-align: left;
   background: #fff;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Box shadow on each card */
@@ -119,4 +126,36 @@
   font-weight: thin;
   color: #2979ff;
   font-size: 30px;
+}
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 768px) {
+  .featured-container {
+    padding: 20px;
+  }
+
+  .subheading {
+    margin-bottom: 20px;
+  }
+
+  .main-heading {
+    display: none;
+  }
+
+  .mobile-heading {
+    display: block; /* Show on smaller screens */
+  }
+  .mobile-heading {
+    display: block;
+    font-size: 24px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+  }
+  .cards {
+    flex-direction: column; /* Stack cards vertically */
+    align-items: center; /* Center cards */
+  }
+  .card {
+    max-width: 450px;
+    /* overflow: hidden; */
+  }
 }

@@ -5,6 +5,8 @@ import {
   Furniture2,
   Furniture3,
   Furniture4,
+  MobileItemFurniture,
+  MobileItemFurniture1,
 } from "../../icons/icons";
 
 interface GalleryItem {
@@ -19,6 +21,8 @@ const items: GalleryItem[] = [
   { id: 2, image: Furniture2, label: "Furniture", items: 5 },
   { id: 3, image: Furniture3, label: "Furniture", items: 5 },
   { id: 4, image: Furniture4, label: "Furniture", items: 5 },
+  { id: 5, image: MobileItemFurniture, label: "Furniture", items: 5 },
+  { id: 6, image: MobileItemFurniture1, label: "Furniture", items: 5 },
 ];
 
 const GalleryCard: React.FC<GalleryItem> = ({
@@ -41,9 +45,16 @@ function FurnitureGallery() {
       <div className="left-item">
         <GalleryCard {...items[0]} />
       </div>
+      <div className="Mobile-leftitem">
+        <GalleryCard {...items[5]} />
+      </div>
       <div className="right-top">
         <GalleryCard {...items[1]} />
       </div>
+      <div className="mobile-item">
+        <GalleryCard {...items[4]} />
+      </div>
+
       <div className="right-bottom">
         <GalleryCard {...items[2]} />
         <GalleryCard {...items[3]} />

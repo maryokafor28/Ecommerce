@@ -1,10 +1,19 @@
 import "./Header.css";
-import { FiPhone, FiChevronDown } from "react-icons/fi";
-import { Envelope, UserIcon } from "../../icons/icons";
+import { useState } from "react";
+import { FiPhone, FiChevronDown, FiX } from "react-icons/fi";
+import {
+  Envelope,
+  UserIcon,
+  Harmbuger,
+  MobileSearch,
+  ShoppingCart,
+} from "../../icons/icons";
 import { FaInstagram, FaTwitter, FaYoutube, FaFacebook } from "react-icons/fa";
 import { HeartIcon, CartIcon, SearchIcon } from "../../icons/icons";
 
 function Header() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   return (
     <header>
       {/* Top Green Banner */}
@@ -55,7 +64,31 @@ function Header() {
           <CartIcon className="nav-icon" />
           <HeartIcon className="nav-icon" />
         </div>
+
+        {/* Mobile Icons */}
+        <div className="mobile-icons">
+          <MobileSearch className="nav-icons" />
+          <ShoppingCart className="nav-icons" />
+          <button
+            className="mobile-menu-toggle"
+            onClick={() => setMobileMenuOpen((prev) => !prev)}
+          >
+            {mobileMenuOpen ? <FiX /> : <Harmbuger />}
+          </button>
+        </div>
       </nav>
+
+      {/* Mobile Menu */}
+      {mobileMenuOpen && (
+        <div className="mobile-menu-expanded">
+          <ul>
+            <li>Home</li>
+            <li className="active">Product</li>
+            <li>Pricing</li>
+            <li>Contact</li>
+          </ul>
+        </div>
+      )}
     </header>
   );
 }
