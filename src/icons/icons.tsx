@@ -36,6 +36,13 @@ import aboutus7 from "../assets/images/aboutus7.svg";
 import aboutus8 from "../assets/images/aboutus8.svg";
 import aboutus9 from "../assets/images/aboutus9.svg";
 import problem from "../assets/images/problems.svg";
+import harmbuger from "../assets/images/harmbugermenu.svg";
+import mobilesearch from "../assets/images/mobile-search.svg";
+import shoppingcart from "../assets/images/shopping cart.svg";
+import mobileitemfurniture from "../assets/images/mobile-item furniture.svg";
+import mobileutemfurniture1 from "../assets/images/mobileitem-furniture1.svg";
+// This file contains all the image components used in the application.
+
 // --- types ---
 
 type ImageProps = {
@@ -430,6 +437,56 @@ function Problem({ className, width, height }: ImageProps) {
     />
   );
 }
+function Harmbuger({ className, width, height }: ImageProps) {
+  return (
+    <img
+      src={harmbuger}
+      alt="Harmbuger"
+      className={className}
+      style={{ width, height }}
+    />
+  );
+}
+function MobileSearch({ className, width, height }: ImageProps) {
+  return (
+    <img
+      src={mobilesearch}
+      alt="Mobile Search"
+      className={className}
+      style={{ width, height }}
+    />
+  );
+}
+function ShoppingCart({ className, width, height }: ImageProps) {
+  return (
+    <img
+      src={shoppingcart}
+      alt="Shopping Cart"
+      className={className}
+      style={{ width, height }}
+    />
+  );
+}
+function MobileItemFurniture({ className, width, height }: ImageProps) {
+  return (
+    <img
+      src={mobileitemfurniture}
+      alt="Mobile Item Furniture"
+      className={className}
+      style={{ width, height }}
+    />
+  );
+}
+function MobileItemFurniture1({ className, width, height }: ImageProps) {
+  return (
+    <img
+      src={mobileutemfurniture1}
+      alt="Mobile Item Furniture 1"
+      className={className}
+      style={{ width, height }}
+    />
+  );
+}
 
 // --- Exporting all components ---
 export {
@@ -471,4 +528,9 @@ export {
   AboutUs8,
   AboutUs9,
   Problem,
+  Harmbuger,
+  MobileSearch,
+  ShoppingCart,
+  MobileItemFurniture,
+  MobileItemFurniture1,
 };

@@ -22,6 +22,7 @@
 }
 
 .heading {
+  width: 100%;
   font-size: 2rem;
   letter-spacing: 0.5px;
   font-weight: 700;
@@ -56,4 +57,25 @@
 
 .cta-button:hover {
   background-color: #1976d2;
+}
+
+@media (max-width: 768px) {
+  .overlay-content {
+    max-width: 260px; /* or a specific value like 260px to control wrapping */
+  }
+
+  .heading {
+    font-size: 30px;
+    line-height: 1.4;
+    max-width: 358px;
+    /* height: 200px; */
+    margin: 0 auto; /* center the heading */
+    text-align: center; /* center the text */
+  }
+
+  .description {
+    max-width: 275px;
+    font-size: 13px;
+    line-height: 1.5;
+  }
 }

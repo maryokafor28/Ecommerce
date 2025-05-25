@@ -58,3 +58,33 @@
   height: 100px;
   object-fit: cover;
 }
+
+/* MOBILE RESPONSIVENESS */
+
+@media (max-width: 768px) {
+  .aboutus-container {
+    flex-direction: column;
+    gap: 4rem;
+    padding: 20px;
+  }
+
+  .testimonial {
+    max-width: 100%;
+  }
+
+  .testimonial-text {
+    max-width: 220px;
+    font-size: 14px;
+  }
+
+  .gallerys {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 100%;
+  }
+
+  .gallerys-image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+  }
+}
