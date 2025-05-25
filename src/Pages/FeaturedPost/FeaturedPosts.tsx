@@ -1,87 +1,76 @@
+import { HiOutlineChevronRight } from "react-icons/hi";
 import {
   Featured1,
   Featured2,
   Featured3,
-  CommentIcon,
   TimeIcon,
+  CommentIcon,
 } from "../../icons/icons";
-import { HiOutlineChevronRight } from "react-icons/hi";
-
 import "./FeaturedPost.css";
 
 const posts = [
   {
     id: 1,
-    image: <Featured1 />,
-    title: "Loudest à la Madison #1 (L’intégral)",
+    image: Featured1,
+    title: "Loudest à la Madison #1 (L'intégral)",
     date: "22 April 2021",
     comments: 10,
-    tags: ["Google", "Trending", "New"],
-    excerpt:
-      "We focus on ergonomics and meeting you where you work. It’s only a keystroke away.",
+    description:
+      "We focus on ergonomics and meeting you where you work. It's only a keystroke away.",
   },
   {
     id: 2,
-    image: <Featured2 />,
-    title: "Loudest à la Madison #1 (L’intégral)",
+    image: Featured2,
+    title: "Loudest à la Madison #1 (L'intégral)",
     date: "22 April 2021",
     comments: 10,
-    tags: ["Google", "Trending", "New"],
-    excerpt:
-      "We focus on ergonomics and meeting you where you work. It’s only a keystroke away.",
+    description:
+      "We focus on ergonomics and meeting you where you work. It's only a keystroke away.",
   },
   {
     id: 3,
-    image: <Featured3 />,
-    title: "Loudest à la Madison #1 (L’intégral)",
+    image: Featured3,
+    title: "Loudest à la Madison #1 (L'intégral)",
     date: "22 April 2021",
     comments: 10,
-    tags: ["Google", "Trending", "New"],
-    excerpt:
-      "We focus on ergonomics and meeting you where you work. It’s only a keystroke away.",
+    description:
+      "We focus on ergonomics and meeting you where you work. It's only a keystroke away.",
   },
 ];
 
 function FeaturedPosts() {
+  // This component renders a list of featured posts with images, titles, descriptions, and metadata.
   return (
-    <div className="featured-container">
-      <p className="subheading">Practice Advice</p>
-      <h2 className="main-heading">Featured Posts</h2>
-      <h2 className="mobile-heading"> Featured Products</h2>
-      <div className="cards">
+    <div className="featured-posts-container">
+      <p className="subtitle">Practice Advice</p>
+      <h2 className="titles">Featured Posts</h2>
+      <h2 className="titles-mobile">Featured Products</h2>
+
+      <div className="posts-grid">
         {posts.map((post) => (
-          <div className="card" key={post.id}>
+          <div className="post-card" key={post.id}>
             <div className="image-wrapper">
-              {post.image}
-              <span className="badge">NEW</span>
+              <post.image className="post-image" />
+              <div className="new-badge">NEW</div>
             </div>
-            <div className="card-content">
-              <div className="tags">
-                {post.tags.map((tag, index) => (
-                  <span
-                    key={index}
-                    className={`tag ${tag === "Google" ? "google-tag" : ""}`}
-                  >
-                    {tag}
-                    {index < post.tags.length - 1 && "   "}
-                  </span>
-                ))}
-              </div>
-              <h4 className="titles">{post.title}</h4>
-              <p className="excerpt">{post.excerpt}</p>
+            <div className="post-content">
+              <p className="tags">
+                <span className="tag-highlight">Google</span> &nbsp; Trending
+                &nbsp; New
+              </p>
+              <h4 className="post-title">{post.title}</h4>
+              <p className="descriptions">{post.description}</p>
               <div className="meta">
-                <div className="date">
-                  <TimeIcon className="icon" />
-                  {post.date}
-                </div>
-                <div className="comments">
-                  <CommentIcon className="icon" />
-                  {post.comments} comments
-                </div>
+                <span>
+                  <TimeIcon /> {post.date}
+                </span>
+                <span>
+                  <CommentIcon /> {post.comments} comments
+                </span>
               </div>
-              <div className="learn-more">
-                Learn More <HiOutlineChevronRight className="arrow-icon" />
-              </div>
+              <a href="#" className="learn-more">
+                Learn More <HiOutlineChevronRight />
+              </a>
             </div>
           </div>
         ))}
