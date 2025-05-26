@@ -43,6 +43,14 @@ function AboutUs() {
           Slate helps you see how many more days you need to work to reach your
           financial goal.
         </p>
+        <p className="mobile-testimonial-text">
+          Slate helps you see how many more
+          <br />
+          days you need to work to
+          <br />
+          reach your financial goal.
+        </p>
+
         <p className="name">Regina Miles</p>
         <p className="title">Designer</p>
       </div>
