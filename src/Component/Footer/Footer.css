@@ -134,20 +134,14 @@
   .footer-column {
     width: 100%;
   }
-  .subscribe {
-    flex-wrap: nowrap;
-    justify-content: center;
-  }
 
   .subscribe input {
-    max-width: 100px; /* or any value that looks good */
-    flex: none;
-    width: 100%;
+    padding: 1rem;
+    max-width: 100px;
   }
 
   .subscribe button {
-    flex-shrink: 0;
-    white-space: nowrap;
+    padding: 0.1rem 0.5rem;
   }
 
   .footer-bottom {
