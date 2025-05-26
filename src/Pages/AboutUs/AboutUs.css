@@ -5,6 +5,8 @@
   max-width: 900px;
   gap: 10rem;
   margin: 0 auto;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 .testimonial {
@@ -34,6 +36,9 @@
   font-size: 0.95rem;
   margin: 1rem 0;
 }
+.mobile-testimonial-text {
+  display: none;
+}
 
 .name {
   color: #23a6f0;
@@ -49,8 +54,9 @@
 .gallerys {
   max-width: 350px;
   display: grid;
-  grid-template-columns: repeat(3, 100px);
+  grid-template-columns: repeat(3, 1fr);
   justify-content: center;
+  gap: 10px;
 }
 
 .gallerys-image {
@@ -59,7 +65,7 @@
   object-fit: cover;
 }
 
-/* MOBILE RESPONSIVENESS */
+/* ✅ MOBILE RESPONSIVENESS — FIX ONLY OVERFLOW */
 
 @media (max-width: 768px) {
   .aboutus-container {
@@ -73,13 +79,23 @@
   }
 
   .testimonial-text {
-    max-width: 220px;
+    display: none;
+  }
+  .mobile-testimonial-text {
+    display: block;
+    width: 100%;
+    max-width: 288px; /* ⬅️ This helps wrap text into 3 lines */
     font-size: 14px;
+    font-weight: 700;
+    line-height: 1.5;
+    padding: 0 20px;
+    margin: 1rem auto;
+    box-sizing: border-box;
   }
 
   .gallerys {
-    grid-template-columns: repeat(3, 1fr);
     max-width: 100%;
+    width: 100%;
   }
 
   .gallerys-image {

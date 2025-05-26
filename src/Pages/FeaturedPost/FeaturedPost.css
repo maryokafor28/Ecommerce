@@ -80,7 +80,6 @@
   letter-spacing: 0.2px;
   font-size: 20px;
   line-height: 1.4;
-  font-weight: calc(var(--font-weight, 200) + 50);
   margin-bottom: 10px;
 }
 
@@ -89,7 +88,6 @@
   font-size: 16px;
   color: #737373;
   line-height: 1.5;
-  font-weight: calc(var(--font-weight, 100) + 50);
 
   letter-spacing: 0.4px;
   margin-bottom: 16px;
