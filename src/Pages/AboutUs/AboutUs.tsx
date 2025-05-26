@@ -1,4 +1,3 @@
-import React from "react";
 import "./AboutUs.css";
 import { FaStar, FaRegStar } from "react-icons/fa";
 import {
