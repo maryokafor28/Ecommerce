@@ -1,106 +1,116 @@
 .aboutus-container {
-  display: flex;
+  background-color: #fff;
   padding: 40px;
-  align-items: center;
-  max-width: 900px;
-  gap: 10rem;
-  margin: 0 auto;
-  box-sizing: border-box;
-  overflow-x: hidden;
+}
+
+.aboutus-content {
+  max-width: 1000px;
+  /* margin: 0 auto; */
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
 }
 
 .testimonial {
-  max-width: 350px;
+  flex: 0.8;
   text-align: center;
+  margin: 0;
 }
 
-.profile-image {
+.testimonial h2 {
+  color: #252b42;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.testimonial-image {
   width: 80px;
   height: 80px;
   border-radius: 50%;
   object-fit: cover;
-  margin: 1rem 0;
+  margin-bottom: 1rem;
 }
 
 .stars {
-  display: flex;
-  justify-content: center;
-  margin: 0.5rem 0;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
 }
 
 .testimonial-text {
-  width: 450px;
-  color: #737373;
-  line-height: 1.5;
+  color: #555;
+  max-width: 450px;
+  margin: 0 auto;
   font-weight: 700;
   font-size: 0.95rem;
-  margin: 1rem 0;
+  line-height: 1.5;
 }
 .mobile-testimonial-text {
   display: none;
 }
 
-.name {
-  color: #23a6f0;
-  font-weight: bold;
+.testimonial-author {
+  margin-top: 1rem;
 }
 
-.title {
-  font-size: 14px;
+.testimonial-author .name {
+  color: #007bff;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.testimonial-author .role {
   font-weight: 700;
   color: #252b42;
 }
 
-.gallerys {
-  max-width: 350px;
+.image-grid {
+  flex: 1;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  justify-content: center;
-  gap: 10px;
+  gap: 0.5rem;
+  max-width: 350px;
 }
 
-.gallerys-image {
-  width: 100px;
-  height: 100px;
+.image-grid img {
+  width: 100%;
+  height: auto;
   object-fit: cover;
 }
 
-/* ✅ MOBILE RESPONSIVENESS — FIX ONLY OVERFLOW */
-
 @media (max-width: 768px) {
-  .aboutus-container {
+  .aboutus-content {
     flex-direction: column;
-    gap: 4rem;
-    padding: 20px;
+    align-items: center;
+    text-align: center;
+  }
+  .testimonial h2 {
+    width: 200px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    margin-top: 50px;
   }
 
   .testimonial {
-    max-width: 100%;
+    margin-bottom: 2rem;
+    flex: none;
   }
-
   .testimonial-text {
     display: none;
   }
   .mobile-testimonial-text {
     display: block;
-    width: 100%;
-    max-width: 288px; /* ⬅️ This helps wrap text into 3 lines */
-    font-size: 14px;
+    color: #555;
+    max-width: 300px;
+    margin: 0 auto;
     font-weight: 700;
+    font-size: 0.95rem;
     line-height: 1.5;
-    padding: 0 20px;
-    margin: 1rem auto;
-    box-sizing: border-box;
   }
 
-  .gallerys {
+  .image-grid {
     max-width: 100%;
     width: 100%;
-  }
-
-  .gallerys-image {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 1 / 1;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
   }
 }
