@@ -6,9 +6,11 @@
   background-repeat: no-repeat;
   padding: 6rem 1rem;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
+  position: relative;
 }
 
 .overlay-content {
@@ -23,18 +25,22 @@
 
 .heading {
   width: 100%;
-  font-size: 2rem;
+  font-size: 40px;
   letter-spacing: 0.5px;
   font-weight: 700;
   margin-bottom: 1.5rem;
 }
-
+.mobile-headings {
+  display: none; /* hidden by default, shown in mobile view */
+}
 .description {
+  width: 100%;
+  max-width: 400px;
   text-align: center;
   color: #737373;
-  width: 400px;
   font-size: 14px;
   margin-bottom: 1rem;
+  margin-left: 50px; /* aligns with second line */
 }
 
 .price {
@@ -55,27 +61,92 @@
   transition: background-color 0.3s ease;
 }
 
+/* Mobile-specific elements: hidden by default */
+.mobile-price,
+.mobile-cta-button,
+.mobile-description {
+  display: none;
+}
+
 .cta-button:hover {
   background-color: #1976d2;
 }
 
 @media (max-width: 768px) {
+  .problem-section {
+    padding: 4rem 1rem;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+  }
   .overlay-content {
-    max-width: 260px; /* or a specific value like 260px to control wrapping */
+    max-width: 55%;
+    width: 100%;
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
-
-  .heading {
-    font-size: 30px;
+  .highlight {
+    margin-bottom: 25px;
+  }
+  .mobile-headings {
+    display: block;
+    font-size: 40px;
     line-height: 1.4;
-    max-width: 358px;
-    /* height: 200px; */
-    margin: 0 auto; /* center the heading */
-    text-align: center; /* center the text */
+    font-weight: 700;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .heading {
+    display: none; /* hide desktop heading */
+  }
+  .mobile-description {
+    width: 100%;
+    max-width: 260px;
+    line-height: 1.5;
+    text-align: center;
+    color: #737373;
+    font-size: 14px;
+    margin-bottom: 1rem;
+    /* margin-left: 20px; */
   }
 
+  /* Hide desktop price and CTA */
+  .cta-button,
+  .price,
   .description {
-    max-width: 275px;
-    font-size: 13px;
-    line-height: 1.5;
+    display: none;
+  }
+
+  /* Show mobile price and CTA */
+  .mobile-price,
+  .mobile-cta-button,
+  .mobile-description {
+    display: inline-block;
+    text-align: center;
+  }
+
+  .mobile-cta-button {
+    background-color: #2196f3;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.8rem;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 1rem;
+  }
+
+  .mobile-cta-button:hover {
+    background-color: #1976d2;
+  }
+
+  .mobile-price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #23856d;
+    margin-top: 1.5rem;
   }
 }

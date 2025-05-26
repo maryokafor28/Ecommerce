@@ -38,7 +38,7 @@ import aboutus9 from "../assets/images/aboutus9.svg";
 import problem from "../assets/images/problems.svg";
 import harmbuger from "../assets/images/harmbugermenu.svg";
 import mobilesearch from "../assets/images/mobile-search.svg";
-import shoppingcart from "../assets/images/shopping cart.svg";
+import shoppingcart from "../assets/images/shopping-cart.svg";
 import mobileitemfurniture from "../assets/images/mobile-item furniture.svg";
 import mobileutemfurniture1 from "../assets/images/mobileitem-furniture1.svg";
 // This file contains all the image components used in the application.
